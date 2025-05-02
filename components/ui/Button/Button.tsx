@@ -13,19 +13,37 @@ export const Button: React.FC<ButtonProps> = ({
   onClick,
   className = '',
 }) => {
-  const baseStyles = "rounded-full font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 flex items-center justify-center transition-colors";
-  
-  const variantStyles = {
-    primary: "bg-foreground text-background hover:bg-[#383838] dark:hover:bg-[#ccc]",
-    secondary: "border border-solid border-black/[.08] dark:border-white/[.145] hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent"
+  // Pure inline styles since Tailwind isn't working properly
+  const baseStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: '36px',
+    height: '36px',
+    fontFamily: 'var(--font-be-vietnam-pro)',
+    fontSize: '14px',
+    fontWeight: 500,
+    cursor: 'pointer',
+    border: 'none',
+    transition: 'background-color 0.2s, color 0.2s',
+    padding: variant === 'primary' ? '8px 16px' : '0',
+    backgroundColor: variant === 'primary' ? '#0071E3' : 'transparent',
+    color: variant === 'primary' ? '#FFFFFF' : '#0071E3',
   };
 
   return (
     <button
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
       onClick={onClick}
+      style={baseStyles}
+      className={className}
     >
-      {children}
+      {variant === 'secondary' && children === 'Start with a gut quiz' ? (
+        <>
+          {children} <span style={{ marginLeft: '4px' }}>›</span>
+        </>
+      ) : (
+        children
+      )}
     </button>
   );
 };

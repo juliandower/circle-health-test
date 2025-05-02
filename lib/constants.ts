@@ -2,5 +2,9 @@ export const TABS = [
   'All',
   'Gut Health',
   'Stress & Burnout',
-  'Metabolism & Digestion'
+  'Metabolism & Diet',
+  'Gloop & Poop',
+  'Sleep',
+  'Mood',
+  'Energy',
 ];

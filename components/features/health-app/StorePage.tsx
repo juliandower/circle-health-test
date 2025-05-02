@@ -6,7 +6,7 @@ import { ContentCard } from './ContentCard';
 
 export const StorePage: React.FC = () => {
   return (
-    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+    <div className="grid grid-rows-[auto_1fr_auto] min-h-screen gap-8 font-[family-name:var(--font-be-vietnam-pro)]" style={{ margin: 0, padding: 0, width: '100%', maxWidth: '100vw', overflowX: 'hidden' }}>
       <header className="flex flex-col gap-4">
         <SearchBar />
         <BetaBanner />
