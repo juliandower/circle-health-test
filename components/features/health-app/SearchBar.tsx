@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
+interface SearchBarProps {
+  onFocusChange?: (isFocused: boolean) => void;
+}
 
-export const SearchBar: React.FC = () => {
+export const SearchBar: React.FC<SearchBarProps> = ({ onFocusChange }) => {
   // Add a unique class to target the input for styling
   const searchInputClass = 'search-input-black-placeholder';
   
@@ -56,6 +59,9 @@ export const SearchBar: React.FC = () => {
           <input
             type="text"
             placeholder="How can we help?"
+            onFocus={() => onFocusChange && onFocusChange(true)}
+            onBlur={() => onFocusChange && onFocusChange(false)}
+            className={`${searchInputClass}`}
             style={{
               width: '100%',
               height: '56px',
@@ -75,9 +81,9 @@ export const SearchBar: React.FC = () => {
               fontSize: '16px',
               lineHeight: '24px',
               letterSpacing: '-0.01em',
-              color: '#000000', 
+              color: '#000000',
+              outline: 'none' /* Remove the blue outline */
             }}
-            className={`${searchInputClass} border-gray-300 focus:outline-none`}
           />
 
           {/* Mic icon on the right */}

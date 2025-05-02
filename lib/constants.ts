@@ -3,7 +3,6 @@ export const TABS = [
   'Gut Health',
   'Stress & Burnout',
   'Metabolism & Diet',
-  'Gloop & Poop',
   'Sleep',
   'Mood',
   'Energy',

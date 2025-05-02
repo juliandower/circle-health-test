@@ -32,7 +32,7 @@ export const ContentCard: React.FC = () => {
               width: '320px', 
               height: '320px', 
               objectFit: 'contain',
-              filter: 'blur(1px)'
+              filter: 'blur(0.5px)'
             }} 
           />
         </div>
