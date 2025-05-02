@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import Image from 'next/image';
 
 interface SearchBarProps {
   onFocusChange?: (isFocused: boolean) => void;
@@ -53,7 +54,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onFocusChange }) => {
             display: 'flex',
             alignItems: 'center',
           }}>
-            <img src="/icons/arc.svg" alt="Profile" width="24" height="24" />
+            <Image src="/icons/arc.svg" alt="Profile" width={24} height={24} />
           </div>
 
           <input
@@ -96,7 +97,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onFocusChange }) => {
             display: 'flex',
             alignItems: 'center',
           }}>
-            <img src="/icons/mic.svg" alt="Microphone" width="20" height="20" />
+            <Image src="/icons/mic.svg" alt="Microphone" width={20} height={20} />
           </div>
         </div>
       </div>
